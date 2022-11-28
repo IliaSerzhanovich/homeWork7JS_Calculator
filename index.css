@@ -18,6 +18,7 @@
     border: none;
     color: white;
     font-size: xx-large;
+
 }
 
 .buttons-in-calc {
@@ -43,10 +44,23 @@
     border: 1px solid black;
     color: white;
     font-size: larger;
+    cursor: pointer;
+}
+
+.btn-calc:hover {
+    filter: brightness(120%);
+}
+
+.btn-calc:active {
+    filter: brightness(50%);
 }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.input-number::placeholder {
+    color: white;
 }
