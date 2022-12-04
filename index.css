@@ -12,13 +12,12 @@
     border: 1px solid black;
 }
 
-.input-number{
-    height: 20%;
+.input-number {    
     background: rgb(42,45,47);
     border: none;
     color: white;
     font-size: xx-large;
-
+    grid-column: 1 / 5;
 }
 
 .buttons-in-calc {
@@ -55,12 +54,10 @@
     filter: brightness(50%);
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .input-number::placeholder {
     color: white;
+}
+
+.btn-calc-black{
+    color: black
 }

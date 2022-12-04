@@ -1,60 +1,37 @@
-const formCalculator = document.querySelector('.buttons-in-calc');
-const inputCalc = document.querySelector('.input-number');
-let firstNum =''
-let secondNum =''
-let operation =''
-let result = ''
-formCalculator.addEventListener('click', (event) => {
-    event.preventDefault();
-})
+function addnumbersToCalc(number) {
 
-formCalculator.addEventListener('click', clickButton);
-
-
-
-
-function clickButton (event){
-   if(event.target.classList.contains('btn-ac')){
-    firstNum = '';
-    secondNum = '';
-    operation = '';
-    inputCalc.value = '0';
-}
-
-   if(event.target.classList.contains('btn-operation')){
-    operation = event.target.textContent;
-    inputCalc.value =''
-    }
-    
-    if (event.target.classList.contains('btn-number')){
-        inputCalc.value += event.target.textContent
-        if(secondNum === '' && operation ===''){
-            firstNum = inputCalc.value
-        }
-        else if (firstNum !== '' && operation !== ''){
-            secondNum = inputCalc.value
+    if (numbers.includes(number)) {
+        if (secondNumber === '' && operation === '') {
+            firstNumber += number;
+            calculatorInput.value = firstNumber;
         }
 
-        if(firstNum !== '' && operation !== '' && secondNum !== ''){
-            switch(operation){
-                case '-': result = firstNum -secondNum
-                inputCalc.value = result
-                
-
-                case '+': result = firstNum +secondNum
-                inputCalc.value = result
-
-                case '/': result = firstNum / secondNum
-                inputCalc.value = result
-
-                case '*': result = firstNum *secondNum
-                inputCalc.value = result
-            }
+        else if (firstNumber !== '' && secondNumber !== '' && result) {
+            secondNumber += number;
+            result = false;
+            calculatorInput.value = secondNumber;
         }
         
+        else {
+            secondNumber += number;
+            calculatorInput.value = secondNumber;
+        }
+        return;
+    }
     
-   }
-   console.log(firstNum, secondNum,operation)
+    if (operations.includes(number)) {
+        return   operation = number;
+    }
 }
 
-
+function addKeyBoardNumberOrButtonNumber (targetClass, keyKeyboard,targetClick) {
+    if (targetClass.contains('input-number')) {
+        number = keyKeyboard;
+        addnumbersToCalc(number);
+        
+}
+if (targetClass.contains('btn-calc')) {
+    number = targetClick; 
+    addnumbersToCalc(number);
+}
+} 
